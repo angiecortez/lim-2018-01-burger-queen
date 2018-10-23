@@ -43,7 +43,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/lim-2018-01-burger-queen',
+    assetsPublicPath: '/',
 
     /**
      * Source Maps

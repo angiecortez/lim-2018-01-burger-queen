@@ -14,7 +14,7 @@
       <v-spacer/>
       <v-toolbar-items class="hidden-sm-and-down">
           <v-btn flat to="/orders">{{ $t('navigation.orders')}}</v-btn>
-          <v-btn flat to="/cart">{{$t('navigation.products_in_cart', {number: 0 })}}</v-btn>
+          <v-btn flat to="/cart">{{$t('navigation.products_in_cart', {number: $store.state.cartModule.totalProducts })}}</v-btn>
           <v-btn flat to="/shop">{{$t('navigation.shop')}}</v-btn>
           <v-btn @click="logout" flat to="/login">{{$t('navigation.logout')}} </v-btn>
         </v-toolbar-items>

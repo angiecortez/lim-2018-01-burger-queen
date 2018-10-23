@@ -95,7 +95,8 @@ export default {
       product_list: 'Listado de productos',
       products_qty: 'Limite',
       total_products: 'Total mostrados',
-      process_order: 'Procesar pedido'
+      process_order: 'Procesar pedido',
+      total_cost: 'Precio total'
     },
     orders: {
       empty: 'No hay pedidos disponibles',

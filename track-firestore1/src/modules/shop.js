@@ -13,7 +13,7 @@ export default {
     fetchAllProductsPaginate ({commit, state}) {
       if (! state.finish) {
         db.collection('products').limit(state.limit)
-        .where('createdAt', '>', state.last).orderBy('createdAt', 'desc')
+        .where('createdAt', '>', state.last).orderBy('createdAt', 'asc')
         .onSnapshot(snapshot => {
           commit('setProducts', snapshot)
         })
@@ -31,21 +31,25 @@ export default {
             url: product.url,
             price: product.price,
             flex: 6,
-            createdAt: product.createdAt
+            createdAt: product.createdAt,
+            selectOption: product.selectOption
+          }
+          if (!state.products.filter(e => e.id === newProduct.id).length>0) {
+            state.products.push(newProduct)
           }
         })
+        state.finish = false
+        state.last = state.products.slice(-1)[0].createdAt ///cogemos el ultimo producto
       } else {
         state.finish = true
       }
     },
     resetProductsPagination (state) {
-
+      const initial = initialState()
+      Object.keys(initial).forEach(key => {state[key] = initial[key]})
     },
     updateLimitProductsPaginate (state, limit) {
-
+      state.limit = limit
     }
-  },
-  getters: {
-
   }
 }

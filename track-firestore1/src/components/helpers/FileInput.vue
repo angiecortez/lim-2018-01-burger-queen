@@ -60,9 +60,9 @@ export default {
       this.$refs.image.click()
     },
     onFilePicked (event) {
-
-      const files = event.target.files
-      console.log(files[0].name);
+      // console.log(event.target.files);
+      const files = event.target.files || event.dataTransfer.files
+      // console.log(files[0].name);
       if (files && files[0]) {
         let filename = files[0].name
         if (filename && filename.lastIndexOf('.') <= 0) {

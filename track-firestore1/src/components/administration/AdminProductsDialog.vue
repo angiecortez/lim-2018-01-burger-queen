@@ -13,6 +13,17 @@
       <v-card-text>
         <v-container grid-list-md>
           <v-layout wrap>
+            <div>
+              <h3>Selecciona</h3>
+
+              <select v-model="productForEdit.selectOption" name="select" class="selectOption">
+                <option value="Desayuno">Desayuno</option>
+                <option value="Almuerzo">Almuerzo</option>
+                <option value="Cena">Cena</option>
+                <option value="Otros">Otros</option>
+              </select>
+            </div>
+
             <v-flex xs12>
               <v-text-field :label="$t('admin.productsTable.name')" v-model="productForEdit.name"/>
             </v-flex>
@@ -64,7 +75,8 @@ export default {
           name: '',
           price: '',
           url: '',
-          file_id: ''
+          file_id: '',
+          selectOption: null
         }
       })
     },
@@ -125,3 +137,17 @@ export default {
   }
 }
 </script>
+<style scoped>
+  .selectOption {
+    width: 60%;
+    height: 30px;
+    padding: 12px 12px 12px 30px;
+    margin: 14px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #f47742;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+</style>

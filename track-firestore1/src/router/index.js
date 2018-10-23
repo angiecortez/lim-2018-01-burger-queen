@@ -3,9 +3,13 @@ import Router from 'vue-router'
 import Home from '@/components/Home'
 import Register from '@/components/Register'
 import Login from '@/components/Login'
+import Cart from '@/components/Cart'
 import AdminHome from '@/components/administration/AdminHome'
 import AdminUsers from '@/components/administration/AdminUsers'
 import AdminProducts from '@/components/administration/AdminProducts'
+import Products from '@/components/shop/Products'
+import Orders from '@/components/orders/Orders'
+import OrderDetail from '@/components/orders/OrderDetail'
 import store from '@/store'
 
 Vue.use(Router)
@@ -72,6 +76,42 @@ const router = new Router({
           }
         }
       ]
+    },
+    {
+      path: '/shop',
+      name: 'Tienda',
+      component: Products,
+      meta: {
+        Auth: true,
+        title: 'Tienda'
+      }
+    },
+    {
+      path: '/cart',
+      name: 'Carrito',
+      component: Cart,
+      meta: {
+        Auth: true,
+        title: 'Carrito'
+      }
+    },
+    {
+      path: '/orders',
+      name: 'Pedidos',
+      component: Orders,
+      meta: {
+        Auth: true,
+        title: 'Pedidos'
+      }
+    },
+    {
+      path: '/orders/:id',
+      name: 'OrderDetail',
+      component: OrderDetail,
+      meta: {
+        Auth: true,
+        title: 'Detalles de pedido'
+      }
     }
   ]
 })

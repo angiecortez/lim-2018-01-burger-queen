@@ -12,7 +12,8 @@ export default {
           name: '',
           price: '',
           file_id: '',
-          url: ''
+          url: '',
+          selectOption: null
         }
       }
     }
@@ -20,6 +21,7 @@ export default {
   actions: {
     pushFileToStorage({commit}, {fileToUpload, id}) {
       const storageRef = firebase.storage().ref()
+      console.log(storageRef);
       const fileId = faker.random.alphaNumeric(16)
       const uploadTask = storageRef.child(`/products/${fileId}`).put(fileToUpload)
 
@@ -34,10 +36,10 @@ export default {
         () => {
           fileToUpload.url = uploadTask.snapshot.downloadURL
           console.log('hola', fileToUpload.url)
-
-          let product = firebase.firestore().collection('products').doc(id)
+          let product = firebase.firestore().collection(`products`).doc(id)
+          console.log(product);
           return product.update({
-            url: fileToUpload.name,
+            url: fileToUpload.url,
             file_id: fileId
           })
         }
@@ -47,7 +49,7 @@ export default {
       return firebase.storage().ref().child(`products/${product.file_id}`).delete()
     },
     updateDeletedProduct ({commit}, id) {
-      let product = firebase.firestore().collection(`products`).doc(id)
+      let product = firebase.firestore().collection('products').doc(id)
       if (product) {
         return product.update({
           url: '',

@@ -36,7 +36,7 @@ export default {
   getters: {
     logged: (state) => {return !!state.user},
     role: (state) => {return state.role},
-    isCustomer: (state) => { return state.role === 'customer'}
+    isCustomer: (state) => { return state.role == 'customer'}
   }
 
 }

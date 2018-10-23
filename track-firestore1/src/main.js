@@ -7,13 +7,13 @@ import 'firebase/firestore'
 import firebaseConfig from '@/config/firebase'
 import i18n from '@/config/i18n'
 import store from '@/store'
+require('./config/vuetify')
 
 firebase.initializeApp(firebaseConfig)
 
 const db = firebase.firestore()
 db.settings({ timestampsInSnapshots: true })
 export default db
-require('./config/vuetify')
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
@@ -30,9 +30,12 @@ new Vue({
         db.collection('users').doc(user.uid).onSnapshot(snapshot => {
           store.commit('setUser', user)
           if (snapshot.exists) {
-            
+
             store.commit('setRole', snapshot.data().role)
-          } 
+            if (snapshot.data().role === 'customer') {
+              store.dispatch('createCartIfNotExists', user)
+            }
+          }
           store.commit('setLoaded', true)
         })
       } else {

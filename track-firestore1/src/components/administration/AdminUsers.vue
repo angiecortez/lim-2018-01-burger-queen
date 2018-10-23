@@ -34,10 +34,12 @@ export default {
         {text: this.$t('admin.Usertable.uid'), value: 'uid', align: 'center'},
         {text: this.$t('admin.Usertable.email'), value: 'email', align: 'center'},
         {text: this.$t('admin.Usertable.username'), value: 'username', align: 'center'},
+        // {text: 'Desayuno', value: 'tipo', align: 'center'},
         {text: this.$t('common.actions'), value: 'name', sortable: false}
       ],
       users: [],
-      loading: true
+      loading: true,
+      type: []
     }
   },
   mounted () {
@@ -49,7 +51,8 @@ export default {
         this.users.push({
           uid: userData.uid,
           email: userData.email,
-          username: userData.username || '----'
+          username: userData.username || '----',
+          type: userData.type
         })
       })
       this.loading = false
