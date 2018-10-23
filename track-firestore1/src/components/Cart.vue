@@ -9,6 +9,7 @@
       :loading="loading"
       :no-data-text="$t('admin.productsTable.empty')"
     >
+    <!-- <h1></h1> -->
       <template slot="items" slot-scope="props">
         <td class="text-xs-right">{{ props.item.id }}</td>
         <td class="text-xs-right">{{ props.item.name }}</td>
