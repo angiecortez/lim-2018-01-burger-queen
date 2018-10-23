@@ -1,10 +1,10 @@
 <template>
   <div>
-    <Auth 
+    <Auth
     action="login"
     v-on:process="login($event)"/>
 
-    <SnackBar 
+    <SnackBar
     v-if="snackBar"
     :snackBar="snackBar"
     :text="message"
@@ -23,13 +23,13 @@ export default {
     return {
       snackBar: false,
       message: '',
-      timeout: 5000
+      timeout: 2000
     }
   },
   methods: {
     login (user) {
       this.$store.dispatch('firebaseLogin', user)
-      .then(data => {        
+      .then(data => {
         db.collection('users').doc(data.user.uid).onSnapshot(snapshot => {
           this.$router.push('/')
         })

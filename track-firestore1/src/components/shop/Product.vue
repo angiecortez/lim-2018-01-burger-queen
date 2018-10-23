@@ -11,7 +11,7 @@
           <v-icon>label</v-icon>{{product.name}}
         </v-chip>
         <v-chip label color="red" outline>
-          {{product.price}}
+          S/{{product.price}}
         </v-chip>
       </span>
       <v-btn icon @click="$emit('addToCart')" v-if="$store.getters.isCustomer">

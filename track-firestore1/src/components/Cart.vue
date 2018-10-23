@@ -79,7 +79,7 @@ export default {
           show: true,
           type: 'success',
           message: this.$t('messages.order_processed'),
-          timeout: 3000
+          timeout: 1000
         })
         this.$router.push('/orders')
       })

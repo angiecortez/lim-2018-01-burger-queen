@@ -87,7 +87,7 @@ export default {
           this.$store.dispatch('fetchAllProductsPaginate').then(() => {
             this.loading = false
           })
-        }, 2000)
+        }, 1000)
       }
     },
     changeLimit (limit) {

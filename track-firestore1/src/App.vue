@@ -12,14 +12,14 @@
           :value="$store.state.alert.show">
           {{$store.state.alert.message}}
           </v-alert>
-          
+
           <router-view/>
         </v-container>
 
       </v-content>
       <v-container v-else fill-height>
         <v-layout flex align-center justify-center>
-          <v-progress-circular indeterminate :size="100" :width="10" color="purple"/>
+          <!-- <v-progress-circular indeterminate :size="100" :width="10" color="purple"/> -->
 
         </v-layout>
       </v-container>

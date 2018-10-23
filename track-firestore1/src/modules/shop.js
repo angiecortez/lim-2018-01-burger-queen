@@ -4,7 +4,7 @@ import * as faker from 'faker'
 const initialState = () => ({
   products: [],
   last: 10000,
-  limit: 2,
+  limit: 4,
   finish: false //si ya no tenemos mas productos
 })
 export default {
