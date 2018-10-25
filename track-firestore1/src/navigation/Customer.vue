@@ -56,7 +56,7 @@
               {{$t('navigation.logout')}}
             </v-list-tile-title>
           </v-list-tile-content> -->
-        </v-list-tile>
+        <!-- </v-list-t`ile> -->
       </v-navigation-drawer>
 
   </div>
@@ -65,7 +65,7 @@
 import NavigationMixin from '@/mixins/navigation'
 export default {
   name: 'Customer',
-  mixins: [NavigationMixin],
+  mixins: [ NavigationMixin ],
   data () {
     return {
       drawer: false,
