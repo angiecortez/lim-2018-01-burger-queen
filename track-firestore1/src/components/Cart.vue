@@ -26,7 +26,8 @@
       </template>
       <template slot="footer" v-if="!loading">
         <td colspan="100%" class="text-xs-right">
-          <strong>{{$t('shop.total_cost')}}</strong>
+          <strong>{{$t('shop.total_cost')}}</strong> 
+          S/{{this.$store.getters.totalCostCart}}
           <v-btn :disabled="!products.length" color="primary" @click="processCart">{{$t('shop.process_order')}}</v-btn>
         </td>
       </template>

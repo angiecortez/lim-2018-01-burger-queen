@@ -12,7 +12,7 @@
           <h4 class="display-2">{{$t('admin.products')}}</h4>
           <v-divider class="my-3"/>
 
-          <div class="title mb-3" v-for="product in order.products">
+          <div class="title mb-3" v-for="product in order.products" :key="product">
             {{product.name}} {{product.qty}}
           </div>
 
