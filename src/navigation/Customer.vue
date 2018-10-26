@@ -56,7 +56,7 @@
               {{$t('navigation.logout')}}
             </v-list-tile-title>
           </v-list-tile-content> -->
-        </v-list-tile>
+        <!-- </v-list-tile> -->
       </v-navigation-drawer>
 
   </div>
@@ -71,10 +71,9 @@ export default {
       drawer: false,
       items: [
         { title: this.$t("navigation.home"), icon: "home", to: "/admin" },
-        { title: this.$t("navigation.shop"), icon: "shopping_basket", to: "/shop"},
-        {title: this.$t("navigation.cart"), icon: "shopping_cart", to: "/cart"},
-        {title: this.$t("navigation.orders"), icon: "view_headline", to: "/orders"
-        }
+        { title: this.$t("navigation.shop"), icon: "shopping_basket", to: "/shop" },
+        { title: this.$t("navigation.cart"), icon: "shopping_cart", to: "/cart" },
+        { title: this.$t("navigation.orders"), icon: "view_headline", to: "/orders" }
       ]
     }
   }

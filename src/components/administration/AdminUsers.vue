@@ -71,7 +71,7 @@ export default {
           show: true,
           type: 'success',
           message: this.$t('messages.deleted', {item: this.$t('common.user')}),
-          timeout: 5000
+          timeout: 1000
         })
       })
     }

@@ -23,7 +23,7 @@ export default {
     return {
       snackBar: false,
       message: '',
-      timeout: 2000
+      timeout: 0
     }
   },
   methods: {

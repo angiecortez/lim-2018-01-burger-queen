@@ -119,7 +119,7 @@ export default {
         show: true,
         type: 'success',
         message: this.$t(`messages.${action}`, {item: this.$t('common.product')}),
-        timeout: 5000
+        timeout: 1000
       })
       this.close()
     }

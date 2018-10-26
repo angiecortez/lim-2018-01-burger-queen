@@ -70,7 +70,7 @@ export default {
           show: true,
           type: 'success',
           message: this.$t('messages.saved', {item: this.$t('common.user')}),
-          timeout: 5000
+          timeout: 1000
         })
         this.close()
       })
@@ -82,7 +82,7 @@ export default {
           show: true,
           type: 'success',
           message: this.$t('messages.updated', {item: this.$t('common.user')}),
-          timeout: 5000
+          timeout: 1000
         })
         this.close()
       })

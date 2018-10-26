@@ -58,7 +58,7 @@ export default {
     setTimeout(() => {
       this.products = this.$store.state.cartModule.cart
       this.loading = false
-    }, 2000)
+    }, 1000)
   },
   methods: {
     ...mapActions(['updateCart', 'processOrder']),

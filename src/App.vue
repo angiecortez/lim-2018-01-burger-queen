@@ -32,7 +32,6 @@
 
 <script>
 import Guest from '@/navigation/Guest'
-import Table from '@/navigation/Table'
 import Footer from '@/components/Footer'
 import Admin from '@/navigation/Admin'
 import Customer from '@/navigation/Customer'
